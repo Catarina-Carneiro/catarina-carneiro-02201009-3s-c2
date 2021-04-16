@@ -31,7 +31,7 @@ public class LutaController {
 
     @GetMapping("/contagem-vivos ")
     public ResponseEntity getMortos() {
-        return ResponseEntity.status(200).body(repository.findBynNomeandForcaGolpeandVivoFalse(nome,forcaGolpe,false));
+        return ResponseEntity.status(200).body(repository.findBynNomeandForcaGolpeandVivoFalse(nome,forcaGolpe));
     }
 
 

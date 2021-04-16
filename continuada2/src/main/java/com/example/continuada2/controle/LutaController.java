@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/lutadores")
@@ -23,6 +24,11 @@ public class LutaController {
         return ResponseEntity.status(201).build();
     }
 
+    @GetMapping
+    public ResponseEntity getPizzas() {
+        List<LutaLivre> lutadores = repository.findAll();
+        return ResponseEntity.status(200).body(lutadores);
+    }
 
     @GetMapping("/contagem-vivos ")
     public ResponseEntity getContagemVivos() {
